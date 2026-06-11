@@ -1,0 +1,47 @@
+# macOS / editor noise
+.DS_Store
+**/.DS_Store
+*.swp
+*.swo
+
+# Microsoft Office lock / autosave files
+~$*
+*.tmp
+
+# Python caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Build outputs and dependency caches
+build/
+dist/
+target/
+node_modules/
+.venv/
+venv/
+
+# Nested working repositories already tracked elsewhere.
+# Keep this repository focused on the Biosignature study database,
+# reports, scripts, and project documentation.
+Python-MA/
+MA 算法/
+
+# Private/personal project administration materials and third-party literature.
+# These should not be published to a public GitHub repository without review.
+2026年创新训练计划预立项答辩/
+Biomarks/
+H_2/
+Organic Isotope/
+文献/
+中期/
+大创项目申请/
+汇报/
+重点项目/
+项目制课程/
+
+# Large source databases that exceed normal GitHub file limits.
+Python-MA/COCONUT-NP/coconut_csv-04-2026.csv
+
+# Local generated Office lock files in database outputs
+数据库/~$*.xlsx
