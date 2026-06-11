@@ -24,7 +24,7 @@ The current scientific goals are:
 
 The current recommended workbook is:
 
-[`数据库/5.20完善数据集_research_db_v0.3_sources_dedup.xlsx`](数据库/5.20完善数据集_research_db_v0.3_sources_dedup.xlsx)
+[`数据库/5.20完善数据集_research_db_v0.4_ma_corrected.xlsx`](数据库/5.20完善数据集_research_db_v0.4_ma_corrected.xlsx)
 
 Its detailed structure is documented here:
 
@@ -33,6 +33,10 @@ Its detailed structure is documented here:
 The original dataset is preserved as:
 
 [`数据库/5.20完善数据集.xlsx`](数据库/5.20完善数据集.xlsx)
+
+A corrected copy with yellow-highlighted/random MA values removed is available as:
+
+[`数据库/5.20完善数据集_ma_corrected.xlsx`](数据库/5.20完善数据集_ma_corrected.xlsx)
 
 ## Repository Structure
 
@@ -62,6 +66,7 @@ The database is designed around evidence rather than only molecule names.
    - `ML_Dataset_View`
 
 The current database includes a 20-molecule pilot curation set in `Pilot_Curation_20`.
+In v0.4, 51 yellow-highlighted MA values from the original `All` sheet were removed because they were randomly filled placeholders. These rows are tracked in `MA_Removal_Log`.
 
 ## Scripts
 
@@ -71,6 +76,7 @@ Run from the repository root:
 python3 scripts/build_research_database.py
 python3 scripts/curate_pilot_20.py
 python3 scripts/deduplicate_sources.py
+python3 scripts/remove_highlighted_random_ma.py
 ```
 
 These scripts generate the current research database versions from the legacy workbook and BibTeX source list.
@@ -82,4 +88,3 @@ These scripts generate the current research database versions from the legacy wo
 - Biomarker candidates should not be treated as life-exclusive without a targeted nonbiotic-origin search.
 - The machine-learning view is not yet a final training dataset.
 - Pilot samples are intentionally held out until full source, structure, and leakage audits are complete.
-
