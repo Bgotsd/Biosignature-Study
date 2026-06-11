@@ -24,7 +24,7 @@ The current scientific goals are:
 
 The current recommended workbook is:
 
-[`数据库/5.20完善数据集_research_db_v0.5_workflow_enhanced.xlsx`](数据库/5.20完善数据集_research_db_v0.5_workflow_enhanced.xlsx)
+[`数据库/5.20完善数据集_research_db_v0.6_source_locations.xlsx`](数据库/5.20完善数据集_research_db_v0.6_source_locations.xlsx)
 
 Its detailed structure is documented here:
 
@@ -68,6 +68,7 @@ The database is designed around evidence rather than only molecule names.
 The current database includes a 20-molecule pilot curation set in `Pilot_Curation_20`.
 In v0.4, 51 yellow-highlighted MA values from the original `All` sheet were removed because they were randomly filled placeholders. These rows are tracked in `MA_Removal_Log`.
 In v0.5, workflow sheets were added for MA recomputation, structure auditing, nonbiotic-origin searches, source-linking tasks, and curation priorities.
+In v0.6, every `Evidence_Log` row was linked to a `Source_ID` and an auditable `Evidence_Location`. These locations distinguish exact local provenance, such as legacy workbook rows or local source-file lines, from publication-grade primary literature positions that still require manual table/page/supplement checks.
 
 ## MA Calculation Provenance
 
@@ -96,6 +97,7 @@ python3 scripts/curate_pilot_20.py
 python3 scripts/deduplicate_sources.py
 python3 scripts/remove_highlighted_random_ma.py
 python3 scripts/enhance_database_v0_5.py
+python3 scripts/fill_source_locations_v0_6.py
 ```
 
 These scripts generate the current research database versions from the legacy workbook and BibTeX source list.
