@@ -70,6 +70,14 @@ In v0.4, 51 yellow-highlighted MA values from the original `All` sheet were remo
 In v0.5, workflow sheets were added for MA recomputation, structure auditing, nonbiotic-origin searches, source-linking tasks, and curation priorities.
 In v0.6, every `Evidence_Log` row was linked to a `Source_ID` and an auditable `Evidence_Location`. These locations distinguish exact local provenance, such as legacy workbook rows or local source-file lines, from publication-grade primary literature positions that still require manual table/page/supplement checks.
 
+The first expansion roadmap is documented in:
+
+[`数据库/数据扩充目标_v0.1.md`](数据库/数据扩充目标_v0.1.md)
+
+Candidate source queues are listed in:
+
+[`数据库/source_expansion_candidates_v0.1.tsv`](数据库/source_expansion_candidates_v0.1.tsv)
+
 ## MA Calculation Provenance
 
 Current MA calculations are based on the open-source [`DaymudeLab/assembly-theory`](https://github.com/DaymudeLab/assembly-theory) implementation. According to its project README, `assembly-theory` is a Rust implementation with Python package and command-line interfaces for computing assembly indices of molecular structures; the command-line executable can take a `.mol` file as input.
