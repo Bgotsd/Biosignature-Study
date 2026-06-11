@@ -68,6 +68,23 @@ The database is designed around evidence rather than only molecule names.
 The current database includes a 20-molecule pilot curation set in `Pilot_Curation_20`.
 In v0.4, 51 yellow-highlighted MA values from the original `All` sheet were removed because they were randomly filled placeholders. These rows are tracked in `MA_Removal_Log`.
 
+## MA Calculation Provenance
+
+Current MA calculations are based on the open-source [`DaymudeLab/assembly-theory`](https://github.com/DaymudeLab/assembly-theory) implementation. According to its project README, `assembly-theory` is a Rust implementation with Python package and command-line interfaces for computing assembly indices of molecular structures; the command-line executable can take a `.mol` file as input.
+
+Future database versions should record MA provenance explicitly for each computed value:
+
+- `MA_Method`
+- `MA_Implementation`
+- `MA_Code_URL`
+- `MA_Code_Commit`
+- `MA_Input_File`
+- `MA_Input_SHA256`
+- `MA_Run_Date`
+- `MA_Status`
+
+This is especially important because exact MA calculation is computationally difficult for larger molecules, and some previously highlighted placeholder MA values have now been removed.
+
 ## Scripts
 
 Run from the repository root:
@@ -84,6 +101,7 @@ These scripts generate the current research database versions from the legacy wo
 ## Important Scientific Cautions
 
 - PubChem presence is not required for MA calculation; an auditable molecular graph is the important requirement.
+- MA values should be cited to a specific implementation and version. For this project, the current implementation source is `DaymudeLab/assembly-theory`.
 - Repeated molecules across different sources are evidence records, not noise.
 - Biomarker candidates should not be treated as life-exclusive without a targeted nonbiotic-origin search.
 - The machine-learning view is not yet a final training dataset.
